@@ -1,0 +1,28 @@
+{
+  "name": "Tabsanity",
+  "version": "0.0.6",
+  "description": "Checks that Chrome tab ids don't do unexpected things.",
+  "update_url": "https://fluiddb.fluidinfo.com/about/tabsanity/fluidinfo.com/chrome-update.xml",
+  "manifest_version": 2,
+  "permissions": [
+    "<all_urls>",
+    "tabs"
+  ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "icons" : {
+    "16" : "images/logo-16.png",
+    "19" : "images/logo-19.png",
+    "32" : "images/logo-32.png",
+    "48" : "images/logo-48.png",
+    "64" : "images/logo-64.png",
+    "128" : "images/logo-128.png"
+  },
+  "browser_action": {
+    "default_icon": "images/logo-19.png",
+    "default_title": "Tabsanity"
+  }
+}
