@@ -1,6 +1,6 @@
 {
   "name": "Tabsanity",
-  "version": "0.0.19",
+  "version": "0.0.20",
   "description": "Checks that Chrome tab ids don't do unexpected things.",
   "update_url": "https://fluiddb.fluidinfo.com/about/tabsanity/fluidinfo.com/chrome-update.xml",
   "manifest_version": 2,
