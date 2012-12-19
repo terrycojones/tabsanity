@@ -75,7 +75,7 @@ var TS = {
         // 1. CREATED
         chrome.tabs.onCreated.addListener(function(tab){
             var tabId = tab.id;
-            console.log('Created tag id ' + tabId);
+            console.log('Created tab id ' + tabId);
             if (this.mustNotExist(tabId)){
                 this.tabs[tabId] = true;
             }
@@ -84,14 +84,14 @@ var TS = {
 
         // 2. UPDATED
         chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab){
-            console.log('Updated (' + changeInfo.status + ') tag id ' + tabId);
+            console.log('Updated (' + changeInfo.status + ') tab id ' + tabId);
             this.mustExist(tabId, 'updated');
             this.sanityCheck();
         }.bind(this));
 
         // 3. MOVED
         chrome.tabs.onMoved.addListener(function(tabId, moveInfo){
-            console.log('Moving tag id ' + tabId);
+            console.log('Moving tab id ' + tabId);
             this.mustExist(tabId, 'moved');
             this.sanityCheck();
         }.bind(this));
@@ -99,7 +99,7 @@ var TS = {
         // 4. ACTIVATED
         chrome.tabs.onActivated.addListener(function(activeInfo){
             var tabId = activeInfo.tabId;
-            console.log('Activated tag id ' + tabId);
+            console.log('Activated tab id ' + tabId);
             this.mustExist(tabId, 'activated');
             this.sanityCheck();
         }.bind(this));
@@ -109,7 +109,7 @@ var TS = {
             var i, tabId;
             for (i = 0; i < info.tabIds.length; i++){
                 tabId = info.tabIds[i];
-                console.log('Highlighted tag id ' + tabId);
+                console.log('Highlighted tab id ' + tabId);
                 this.mustExist(tabId, 'highlighted');
             }
             this.sanityCheck();
@@ -117,21 +117,21 @@ var TS = {
 
         // 6. DETACHED
         chrome.tabs.onDetached.addListener(function(tabId, info){
-            console.log('Detached tag id ' + tabId);
+            console.log('Detached tab id ' + tabId);
             this.mustExist(tabId, 'detached');
             this.sanityCheck();
         }.bind(this));
 
         // 7. ATTACHED
         chrome.tabs.onAttached.addListener(function(tabId, info){
-            console.log('Attached tag id ' + tabId);
+            console.log('Attached tab id ' + tabId);
             this.mustExist(tabId, 'attached');
             this.sanityCheck();
         }.bind(this));
 
         // 8. REMOVED
         chrome.tabs.onRemoved.addListener(function(tabId, removeInfo){
-            console.log('Removing tag id ' + tabId);
+            console.log('Removing tab id ' + tabId);
             if (this.mustExist(tabId, 'removed')){
                 delete this.tabs[tabId];
             }
