@@ -70,7 +70,7 @@ var TS = {
     initListeners: function(){
 
         // Add listeners for the 8 tab events given at
-        // https://developer.chrome.com/extensions/tabs.html#method-update
+        // https://developer.chrome.com/extensions/tabs.html
 
         // 1. CREATED
         chrome.tabs.onCreated.addListener(function(tab){
